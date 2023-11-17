@@ -1,0 +1,599 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "appNode",
+    "dateExported": "2023-11-17T11:22:47.838Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "41777f60-182e-4e11-82b3-e298e2e64167",
+            "name": "Marca",
+            "containerId": "",
+            "created": "2023-11-17T09:55:15.658Z",
+            "sortNum": 5000
+        },
+        {
+            "_id": "43f2cc72-a8eb-4734-bc15-7dfce9c2adc9",
+            "name": "Modelo",
+            "containerId": "",
+            "created": "2023-11-17T09:43:02.559Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "509845a4-fc69-4644-a3de-0b9f52241d0e",
+            "name": "Users",
+            "containerId": "",
+            "created": "2023-11-17T09:55:20.431Z",
+            "sortNum": 30000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "ccf17dda-e5c3-42be-b178-9888ad06eae3",
+            "colId": "40f0f9bf-2cb3-4407-affa-5da610c9aa36",
+            "containerId": "43f2cc72-a8eb-4734-bc15-7dfce9c2adc9",
+            "name": "GetModelos",
+            "url": "/",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-11-17T09:43:10.321Z",
+            "modified": "2023-11-17T09:43:34.225Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "228b836a-5a83-46a3-a4b0-e20d99978611",
+            "colId": "40f0f9bf-2cb3-4407-affa-5da610c9aa36",
+            "containerId": "43f2cc72-a8eb-4734-bc15-7dfce9c2adc9",
+            "name": "GetModeloIdBien",
+            "url": "",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-11-17T09:43:48.419Z",
+            "modified": "2023-11-17T09:43:48.420Z",
+            "headers": []
+        },
+        {
+            "_id": "4da27b8e-bd42-4931-bf8e-9554a311e616",
+            "colId": "40f0f9bf-2cb3-4407-affa-5da610c9aa36",
+            "containerId": "43f2cc72-a8eb-4734-bc15-7dfce9c2adc9",
+            "name": "GetModeloIdMal",
+            "url": "/659",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-11-17T09:44:09.060Z",
+            "modified": "2023-11-17T09:44:16.131Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "dc1a46cb-4bda-48ef-9f16-ec2858e43f84",
+            "colId": "40f0f9bf-2cb3-4407-affa-5da610c9aa36",
+            "containerId": "43f2cc72-a8eb-4734-bc15-7dfce9c2adc9",
+            "name": "PostModeloDatosCorrectos",
+            "url": "/",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-11-17T09:44:58.278Z",
+            "modified": "2023-11-17T09:53:21.950Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Mustang\",\n  \"caballos\" : \"120cv\",\n  \"anno_modelo\": \"2016\",\n  \"idMarca\": \"1\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "36cdb7fe-4cc5-46f6-86f9-7b7404b0a196",
+            "colId": "40f0f9bf-2cb3-4407-affa-5da610c9aa36",
+            "containerId": "43f2cc72-a8eb-4734-bc15-7dfce9c2adc9",
+            "name": "PostModeloCampoVacío",
+            "url": "/",
+            "method": "POST",
+            "sortNum": 45000,
+            "created": "2023-11-17T09:51:54.665Z",
+            "modified": "2023-11-17T09:54:15.001Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Camaro\",\n  \"caballos\" : \"110cv\",\n  \"idMarca\": \"2\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "3a565f64-2b7a-4305-a19c-ab584df92b66",
+            "colId": "40f0f9bf-2cb3-4407-affa-5da610c9aa36",
+            "containerId": "43f2cc72-a8eb-4734-bc15-7dfce9c2adc9",
+            "name": "PostModeloYaExistente",
+            "url": "/",
+            "method": "POST",
+            "sortNum": 47500,
+            "created": "2023-11-17T10:59:10.785Z",
+            "modified": "2023-11-17T10:59:23.930Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Mustang\",\n  \"caballos\" : \"120cv\",\n  \"anno_modelo\": \"2016\",\n  \"idMarca\": \"1\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "e8748a42-1968-4ba8-be10-68379a0f256d",
+            "colId": "40f0f9bf-2cb3-4407-affa-5da610c9aa36",
+            "containerId": "43f2cc72-a8eb-4734-bc15-7dfce9c2adc9",
+            "name": "DeleteModeloIdBien",
+            "url": "/1",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2023-11-17T09:47:45.597Z",
+            "modified": "2023-11-17T09:47:53.370Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "41819e6c-7877-432e-a8d7-14d812136b4c",
+            "colId": "40f0f9bf-2cb3-4407-affa-5da610c9aa36",
+            "containerId": "43f2cc72-a8eb-4734-bc15-7dfce9c2adc9",
+            "name": "DeleteModeloIdMal",
+            "url": "/460",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2023-11-17T09:48:19.412Z",
+            "modified": "2023-11-17T09:48:26.181Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "7fe65b5c-7e06-442e-92a1-27ca3571150d",
+            "colId": "40f0f9bf-2cb3-4407-affa-5da610c9aa36",
+            "containerId": "43f2cc72-a8eb-4734-bc15-7dfce9c2adc9",
+            "name": "PutModeloIdBien",
+            "url": "/1",
+            "method": "PUT",
+            "sortNum": 70000,
+            "created": "2023-11-17T09:49:07.060Z",
+            "modified": "2023-11-17T10:36:16.092Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"anno_modelo\": \"2018\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "282c0de1-1c43-463f-95ad-4bdbdbea7ff0",
+            "colId": "40f0f9bf-2cb3-4407-affa-5da610c9aa36",
+            "containerId": "43f2cc72-a8eb-4734-bc15-7dfce9c2adc9",
+            "name": "PutModeloIdMal",
+            "url": "/839",
+            "method": "PUT",
+            "sortNum": 80000,
+            "created": "2023-11-17T09:49:41.384Z",
+            "modified": "2023-11-17T10:36:25.310Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"anno_modelo\": \"2018\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "bdd6ef21-4fd1-4a90-a689-4350b0f29bd2",
+            "colId": "40f0f9bf-2cb3-4407-affa-5da610c9aa36",
+            "containerId": "41777f60-182e-4e11-82b3-e298e2e64167",
+            "name": "GetMarcas",
+            "url": "/",
+            "method": "GET",
+            "sortNum": 100000,
+            "created": "2023-11-17T10:35:28.894Z",
+            "modified": "2023-11-17T11:16:29.060Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "200"
+                }
+            ]
+        },
+        {
+            "_id": "ee7df265-569f-4f8e-9e8b-04d91b8ea39f",
+            "colId": "40f0f9bf-2cb3-4407-affa-5da610c9aa36",
+            "containerId": "41777f60-182e-4e11-82b3-e298e2e64167",
+            "name": "GetMarcaIdBien",
+            "url": "/1",
+            "method": "GET",
+            "sortNum": 110000,
+            "created": "2023-11-17T10:37:21.079Z",
+            "modified": "2023-11-17T11:18:33.500Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "200"
+                }
+            ]
+        },
+        {
+            "_id": "38c87087-54de-4699-83a5-1b9b88acac1a",
+            "colId": "40f0f9bf-2cb3-4407-affa-5da610c9aa36",
+            "containerId": "41777f60-182e-4e11-82b3-e298e2e64167",
+            "name": "GetMarcaIdMal",
+            "url": "/2034",
+            "method": "GET",
+            "sortNum": 120000,
+            "created": "2023-11-17T10:37:59.391Z",
+            "modified": "2023-11-17T11:19:45.812Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "400"
+                }
+            ]
+        },
+        {
+            "_id": "cbee8f7e-3795-403c-b845-d2651b252353",
+            "colId": "40f0f9bf-2cb3-4407-affa-5da610c9aa36",
+            "containerId": "41777f60-182e-4e11-82b3-e298e2e64167",
+            "name": "PostMarcaDatosCorrectos",
+            "url": "/",
+            "method": "POST",
+            "sortNum": 130000,
+            "created": "2023-11-17T10:38:41.451Z",
+            "modified": "2023-11-17T11:20:25.118Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Hyundai\",\n  \"anno_fundacion\": \"1985\",\n  \"fundador\": \"Nakata\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "200"
+                }
+            ]
+        },
+        {
+            "_id": "dfcd55a1-0e0b-4b47-b3bb-226f4ba8a674",
+            "colId": "40f0f9bf-2cb3-4407-affa-5da610c9aa36",
+            "containerId": "41777f60-182e-4e11-82b3-e298e2e64167",
+            "name": "PostMarcaCampoVacío",
+            "url": "/",
+            "method": "POST",
+            "sortNum": 130000,
+            "created": "2023-11-17T10:40:51.720Z",
+            "modified": "2023-11-17T11:20:36.735Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n   \"nombre\":\"Renault\",\n   \"fundador\":\"Nasri\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "400"
+                }
+            ]
+        },
+        {
+            "_id": "9adda6bd-909c-4b7b-897e-1aecb8806392",
+            "colId": "40f0f9bf-2cb3-4407-affa-5da610c9aa36",
+            "containerId": "41777f60-182e-4e11-82b3-e298e2e64167",
+            "name": "PostMarcaYaExistente",
+            "url": "/",
+            "method": "POST",
+            "sortNum": 140000,
+            "created": "2023-11-17T10:59:40.208Z",
+            "modified": "2023-11-17T11:21:00.432Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Hyundai\",\n  \"anno_fundacion\": \"1985\",\n  \"fundador\": \"Nakata\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "400"
+                }
+            ]
+        },
+        {
+            "_id": "144004ac-0b4f-4e85-8939-57c6c0f6bed4",
+            "colId": "40f0f9bf-2cb3-4407-affa-5da610c9aa36",
+            "containerId": "41777f60-182e-4e11-82b3-e298e2e64167",
+            "name": "PutMarcaIdBien",
+            "url": "/1",
+            "method": "PUT",
+            "sortNum": 160000,
+            "created": "2023-11-17T10:43:15.346Z",
+            "modified": "2023-11-17T11:21:12.342Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\":\"Skoda\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "200"
+                }
+            ]
+        },
+        {
+            "_id": "62da0ae6-44ba-41e1-b149-fd84485e9bdd",
+            "colId": "40f0f9bf-2cb3-4407-affa-5da610c9aa36",
+            "containerId": "41777f60-182e-4e11-82b3-e298e2e64167",
+            "name": "PutMarcaIdMal",
+            "url": "/8698",
+            "method": "PUT",
+            "sortNum": 170000,
+            "created": "2023-11-17T10:46:09.848Z",
+            "modified": "2023-11-17T11:21:23.520Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\":\"Peugeot\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "400"
+                }
+            ]
+        },
+        {
+            "_id": "30918c3e-f7a1-4488-9612-13a789549bcb",
+            "colId": "40f0f9bf-2cb3-4407-affa-5da610c9aa36",
+            "containerId": "509845a4-fc69-4644-a3de-0b9f52241d0e",
+            "name": "GetUsers",
+            "url": "/",
+            "method": "GET",
+            "sortNum": 180000,
+            "created": "2023-11-17T10:47:08.035Z",
+            "modified": "2023-11-17T10:47:12.534Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "f40b4e90-6651-45a4-9042-62b015843ae9",
+            "colId": "40f0f9bf-2cb3-4407-affa-5da610c9aa36",
+            "containerId": "509845a4-fc69-4644-a3de-0b9f52241d0e",
+            "name": "GetUserIdBien",
+            "url": "/1",
+            "method": "GET",
+            "sortNum": 190000,
+            "created": "2023-11-17T10:48:09.401Z",
+            "modified": "2023-11-17T10:48:15.882Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "8713e6ae-4563-4624-9b74-7b345b898485",
+            "colId": "40f0f9bf-2cb3-4407-affa-5da610c9aa36",
+            "containerId": "509845a4-fc69-4644-a3de-0b9f52241d0e",
+            "name": "GetUserIdMal",
+            "url": "/3453",
+            "method": "GET",
+            "sortNum": 200000,
+            "created": "2023-11-17T10:48:27.017Z",
+            "modified": "2023-11-17T10:48:33.145Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "3ff614cb-3b30-4b9e-8bf2-ba8ba6d77064",
+            "colId": "40f0f9bf-2cb3-4407-affa-5da610c9aa36",
+            "containerId": "509845a4-fc69-4644-a3de-0b9f52241d0e",
+            "name": "PostUserDatosCorrectos",
+            "url": "/",
+            "method": "POST",
+            "sortNum": 210000,
+            "created": "2023-11-17T10:48:56.884Z",
+            "modified": "2023-11-17T10:49:44.457Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Fernando\",\n  \"email\": \"fernando@gmail.com\",\n  \"password\": \"fernando\",\n  \"rol\": \"admin\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "07f0dbc5-3eec-4cf8-8218-8f67ddf63146",
+            "colId": "40f0f9bf-2cb3-4407-affa-5da610c9aa36",
+            "containerId": "509845a4-fc69-4644-a3de-0b9f52241d0e",
+            "name": "PostUserCampoVacío",
+            "url": "/",
+            "method": "POST",
+            "sortNum": 220000,
+            "created": "2023-11-17T10:50:08.450Z",
+            "modified": "2023-11-17T10:50:46.558Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Lucas\",\n  \"rol\": \"admin\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "8c4ca8a6-2293-4c9a-bd05-3471dade9800",
+            "colId": "40f0f9bf-2cb3-4407-affa-5da610c9aa36",
+            "containerId": "509845a4-fc69-4644-a3de-0b9f52241d0e",
+            "name": "PostUserYaExistente",
+            "url": "/",
+            "method": "POST",
+            "sortNum": 225000,
+            "created": "2023-11-17T11:00:25.321Z",
+            "modified": "2023-11-17T11:00:37.524Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Fernando\",\n  \"email\": \"fernando@gmail.com\",\n  \"password\": \"fernando\",\n  \"rol\": \"admin\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "11ecfdf0-f758-4011-9ebf-ee7b08eea5a5",
+            "colId": "40f0f9bf-2cb3-4407-affa-5da610c9aa36",
+            "containerId": "509845a4-fc69-4644-a3de-0b9f52241d0e",
+            "name": "DeleteUserIdBien",
+            "url": "/1",
+            "method": "DELETE",
+            "sortNum": 230000,
+            "created": "2023-11-17T10:51:01.881Z",
+            "modified": "2023-11-17T10:51:14.287Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ae5541cb-63a1-4dec-ba18-2fdca8ac3de0",
+            "colId": "40f0f9bf-2cb3-4407-affa-5da610c9aa36",
+            "containerId": "509845a4-fc69-4644-a3de-0b9f52241d0e",
+            "name": "DeleteUserIdMal",
+            "url": "/",
+            "method": "DELETE",
+            "sortNum": 240000,
+            "created": "2023-11-17T10:51:26.577Z",
+            "modified": "2023-11-17T10:51:32.162Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "fea9a933-7e21-45be-9be0-f183912f87a9",
+            "colId": "40f0f9bf-2cb3-4407-affa-5da610c9aa36",
+            "containerId": "509845a4-fc69-4644-a3de-0b9f52241d0e",
+            "name": "PutUserIdBien",
+            "url": "/1",
+            "method": "PUT",
+            "sortNum": 250000,
+            "created": "2023-11-17T10:52:00.754Z",
+            "modified": "2023-11-17T10:53:39.776Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\":\"Jose\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "77029c84-53c4-40f1-91af-b3d16800c5d5",
+            "colId": "40f0f9bf-2cb3-4407-affa-5da610c9aa36",
+            "containerId": "509845a4-fc69-4644-a3de-0b9f52241d0e",
+            "name": "PutUserIdMal",
+            "url": "/354096",
+            "method": "PUT",
+            "sortNum": 260000,
+            "created": "2023-11-17T10:54:01.786Z",
+            "modified": "2023-11-17T10:54:24.115Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\":\"Juan\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "50feca2b-738a-49a6-9f0a-fef7eed97665",
+            "colId": "40f0f9bf-2cb3-4407-affa-5da610c9aa36",
+            "containerId": "41777f60-182e-4e11-82b3-e298e2e64167",
+            "name": "DeleteMarcaIdBien",
+            "url": "/1",
+            "method": "DELETE",
+            "sortNum": 290000,
+            "created": "2023-11-17T10:42:20.337Z",
+            "modified": "2023-11-17T11:21:35.144Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "200"
+                }
+            ]
+        },
+        {
+            "_id": "8df8867b-666e-49c6-bc86-02df9033d351",
+            "colId": "40f0f9bf-2cb3-4407-affa-5da610c9aa36",
+            "containerId": "41777f60-182e-4e11-82b3-e298e2e64167",
+            "name": "DeleteMarcaIdMal",
+            "url": "/6589",
+            "method": "DELETE",
+            "sortNum": 300000,
+            "created": "2023-11-17T10:42:53.418Z",
+            "modified": "2023-11-17T11:21:44.802Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "400"
+                }
+            ]
+        }
+    ],
+    "settings": {
+        "options": {
+            "baseUrl": "http://localhost:3000"
+        }
+    }
+}

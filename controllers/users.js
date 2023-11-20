@@ -10,6 +10,15 @@ const getUsers = async (req, res) => {
     }
 }
 
+const getUser = async (req, res) => {
+    const idUser = req.params.id
+    const user = await User.find({_id:idUser})
+    if (!user.length) {
+        return res.status(404).json({msg:`No existe el usuario con el id ${idUser}`})
+    }
+    res.status(200).json({user});
+}
+
 const addUser = async(req, res = response) => {
     const errors = validationResult(req);
     if ( !errors.isEmpty() ) {
@@ -25,4 +34,27 @@ const addUser = async(req, res = response) => {
     res.json({user})
 }
 
-module.exports = { getUsers, addUser}
+const updateUser = async(req, res = response) => {
+    const idUser = req.params.id
+    const user = await User.find({_id:idUser})
+
+    const newUser = req.body;
+
+    if (!user.length) {
+        return res.status(404).json({msg:`No existe el usuario con el id ${idUser}`})
+    }
+    await User.updateOne({_id:id},newUser);
+    res.json({newUser})
+}
+
+const deleteUser = async(req, res = response) => {
+    const idUser = req.params.id
+    const user = await User.find({_id:idUser})
+    if (!user.length) {
+        return res.status(404).json({msg:`No existe el usuario con el id ${idUser}`})
+    }
+    await User.deleteOne({_id:idUser})
+    res.json({user})
+}
+
+module.exports = { getUsers, getUser, addUser, updateUser, deleteUser}

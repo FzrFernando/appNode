@@ -13,10 +13,10 @@ const getUsers = async (req, res) => {
 const getUser = async (req, res) => {
     const idUser = req.params.id
     const user = await User.find({_id:idUser})
-    if (!user.length) {
+    if (!user) {
         return res.status(404).json({msg:`No existe el usuario con el id ${idUser}`})
     }
-    res.status(200).json({user});
+    res.status(200).json(user);
 }
 
 const addUser = async(req, res = response) => {

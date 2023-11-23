@@ -2,7 +2,8 @@ const express = require("express");
 const router = express.Router();
 const { validateFields } = require("../middlewares/validate-fields");
 const { check } = require('express-validator');
-const { getUsers, addUser, updateUser, deleteUser, getUser } = require ('../controllers/users')
+const { getUsers, addUser, updateUser, deleteUser, getUser } = require ('../controllers/users');
+const { existsEmail, rolUser } = require("../helpers/db-validators");
 
 router.get('/',getUsers)
 
@@ -17,7 +18,8 @@ router.post('/',[
     check('email','Debe ser una dirección de email válida').not().isEmail(),
     check('password','Password is required').not().isEmpty(),
     check('rol','Rol is required').not().isEmpty(),
-    check('rol','El rol solo admite los valores ADMIN o USER').isIn(['ADMIN','USER']),
+    check('rol').custom(rolUser),
+    check('email').custom(existsEmail),
     validateFields
 ],addUser)
 

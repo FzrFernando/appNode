@@ -43,7 +43,7 @@ const updateUser = async(req, res = response) => {
     if (!user.length) {
         return res.status(404).json({msg:`No existe el usuario con el id ${idUser}`})
     }
-    await User.updateOne({_id:id},newUser);
+    await User.updateOne({_id:idUser},newUser);
     res.json({newUser})
 }
 

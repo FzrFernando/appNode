@@ -5,6 +5,7 @@ require('dotenv').config();
 
 const userRoutes = require("./routes/users");
 const marcaRoutes = require("./routes/marca");
+const modeloRoutes = require("./routes/modelo");
 
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
@@ -17,7 +18,8 @@ main().catch((err) => console.log(err));
 
 app.use(express.json());
 app.use('/users',userRoutes);
-app.use('/marca',marcaRoutes)
+app.use('/marca',marcaRoutes);
+app.use('/modelo',modeloRoutes);
 
 app.listen(3000, function() {
     console.log(

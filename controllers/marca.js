@@ -43,7 +43,7 @@ const updateMarca = async(req, res = response) => {
     if (!marca.length) {
         return res.status(404).json({msg:`No existe la marca con el id ${idMarca}`})
     }
-    await Marca.updateOne({_id:id},newMarca);
+    await Marca.updateOne({_id:idMarca},newMarca);
     res.json({newMarca})
 }
 

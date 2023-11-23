@@ -2,33 +2,35 @@ const express = require("express");
 const router = express.Router();
 const { validateFields } = require("../middlewares/validate-fields");
 const { check } = require('express-validator');
-const { getMarcas, getMarca, addMarca, updateMarca, deleteMarca } = require("../controllers/marca");
+const { getModelos, getModelo, addModelo, updateModelo, deleteModelo } = require("../controllers/modelo");
 
-router.get('/',getMarcas)
+router.get('/',getModelos)
 
 router.get('/:id',[
     check('id','No es un id correcto').not().isMongoId(),
     validateFields
-],getMarca)
+],getModelo)
 
 router.post('/',[
     check('nombre','Name is required').not().isEmpty(),
-    check('anno_fundacion','Anno_fundacion is required').not().isEmpty(),
-    check('fundador','Fundador is required').not().isEmpty(),
+    check('caballos','Caballos is required').not().isEmpty(),
+    check('anno_modelo','Anno_modelo is required').not().isEmpty(),
+    check('idMarca','IdMarca is required').not().isEmpty(),
     validateFields
-],addMarca)
+],addModelo)
 
 router.put('/:id',[
     check('id','No es un id correcto').isMongoId(),
     check('nombre','Name is required').not().isEmpty(),
-    check('anno_fundacion','El año de fundacion es requerido').not().isEmpty(),
-    check('fundador','El fundador es requerido').not().isEmpty(),
+    check('caballos','Caballos is required').not().isEmpty(),
+    check('anno_modelo','Anno_modelo is required').not().isEmpty(),
+    check('idMarca','IdMarca is required').not().isEmpty(),
     validateFields
-],updateMarca)
+],updateModelo)
 
 router.delete('/:id', [
     check('id','No es un id correcto').isMongoId(),
     validateFields
-],deleteMarca)
+],deleteModelo)
 
 module.exports = router;

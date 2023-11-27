@@ -7,11 +7,5 @@ const existsEmail = async (email) => {
     }
 }
 
-const rolUser = async (rol) => {
-    const rolExists = await User.findOne({rol});
-    if (rolExists != "USER" || rolExists != "ADMIN") {
-        throw new Error('Debes de tener un rol válido')
-    }
-}
 
-module.exports = { existsEmail, rolUser }
+module.exports = { existsEmail }

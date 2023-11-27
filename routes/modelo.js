@@ -7,7 +7,7 @@ const { getModelos, getModelo, addModelo, updateModelo, deleteModelo } = require
 router.get('/',getModelos)
 
 router.get('/:id',[
-    check('id','No es un id correcto').not().isMongoId(),
+    check('id','No es un id correcto').isMongoId(),
     validateFields
 ],getModelo)
 

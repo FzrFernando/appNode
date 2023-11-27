@@ -7,7 +7,7 @@ const { getMarcas, getMarca, addMarca, updateMarca, deleteMarca } = require("../
 router.get('/',getMarcas)
 
 router.get('/:id',[
-    check('id','No es un id correcto').not().isMongoId(),
+    check('id','No es un id correcto').isMongoId(),
     validateFields
 ],getMarca)
 

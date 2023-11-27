@@ -43,7 +43,7 @@ const updateModelo = async(req, res = response) => {
     if (!modelo.length) {
         return res.status(404).json({msg:`No existe el modelo con el id ${idModelo}`})
     }
-    await Modelo.updateOne({_id:id},newModelo);
+    await Modelo.updateOne({_id:idModelo},newModelo);
     res.json({newModelo})
 }
 

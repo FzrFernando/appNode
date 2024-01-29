@@ -17,7 +17,7 @@ async function main() {
 main().catch((err) => console.log(err));
 
 app.use(express.json());
-app.use('/','Hola')
+// app.use('/','Hola')
 app.use('/users',userRoutes);
 app.use('/marca',marcaRoutes);
 app.use('/modelo',modeloRoutes);

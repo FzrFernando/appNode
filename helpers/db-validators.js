@@ -7,5 +7,11 @@ const existsEmail = async (email) => {
     }
 }
 
+const existsNick = async (nick) => {
+    const nickDb = await User.findOne({nick});
+    if (nickDb) {
+        throw new Error(`Nick ${nick} already exists in database`)
+    }
+}
 
-module.exports = { existsEmail }
+module.exports = { existsEmail, existsNick }

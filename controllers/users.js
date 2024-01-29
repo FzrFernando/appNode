@@ -24,8 +24,8 @@ const addUser = async(req, res = response) => {
     if ( !errors.isEmpty() ) {
         return res.status(400).json(errors);
     }
-    const {nombre,email,password,rol} = req.body;
-    const user = new User({nombre,email,password,rol})
+    const {nombre,email,password,rol,nick} = req.body;
+    const user = new User({nombre,email,password,rol,nick})
     const newUser = await User.findOne({nombre})
     if(newUser){
         return res.status(400).json({msg:"Ya existe un usuario con ese nombre"})

@@ -26,9 +26,9 @@ const addUser = async(req, res = response) => {
     }
     const {nombre,email,password,rol,nick} = req.body;
     const user = new User({nombre,email,password,rol,nick})
-    const newUser = await User.findOne({nombre})
+    const newUser = await User.findOne({nick})
     if(newUser){
-        return res.status(400).json({msg:"Ya existe un usuario con ese nombre"})
+        return res.status(400).json({msg:"Ya existe un usuario con ese nick"})
     }
     await user.save();
     res.json({user})

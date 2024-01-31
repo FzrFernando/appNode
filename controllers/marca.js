@@ -12,11 +12,13 @@ const getMarcas = async (req, res) => {
 
 const getMarca = async (req, res) => {
     const idMarca = req.params.id
-    const marca = await Marca.findById(idMarca)
-    if (!marca.length) {
+    const marca = await Marca.findById({_id:idMarca})
+    if (!marca) {
         return res.status(404).json({msg:`No existe la marca con el id ${idMarca}`})
+    } else {
+        res.status(200).json(marca);
     }
-    res.status(200).json(marca);
+    
 }
 
 const addMarca = async(req, res = response) => {

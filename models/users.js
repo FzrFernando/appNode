@@ -3,10 +3,11 @@ const Schema = mongoose.Schema;
 
 const UsersSchema = Schema({
     nombre: String,
+    login: String,
     email: String,
     password: String,
     rol: String,
-    nick: String
+    active: Boolean
 })
 
 module.exports = mongoose.model("Users", UsersSchema);

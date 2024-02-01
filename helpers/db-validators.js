@@ -7,10 +7,10 @@ const existsEmail = async (email) => {
     }
 }
 
-const existsNick = async (nick) => {
-    const nickDb = await User.findOne({nick});
+const existsNick = async (login) => {
+    const nickDb = await User.findOne({login});
     if (nickDb) {
-        throw new Error(`Nick ${nick} already exists in database`)
+        throw new Error(`Nick ${login} already exists in database`)
     }
 }
 

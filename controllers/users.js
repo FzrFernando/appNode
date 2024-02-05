@@ -2,6 +2,7 @@ const User = require('../models/users');
 const { validationResult } = require('express-validator');
 const bcryptjs = require('bcryptjs');
 const salt = bcryptjs.genSaltSync();
+const jwt = require('jsonwebtoken');
 
 // const getUsers = async (req, res) => {
 //     try {
@@ -66,24 +67,6 @@ const deleteUser = async(req, res = response) => {
     res.json({user})
 }
 
-async function login(req, res){
-    const{email, password}=req.body
-    try{
-        const user = await User.findOne({email})
-        const validarPassword = bcryptjs.compareSync(password,user.password)
-        if(!user||!validarPassword){
-            return res.status(400).json({mensage:`No has introducido bien el correo o la contraseña`})
-        }else{
-            if(!user.state){
-                return res.status(400).json({msg:'El usuario fue eliminado'})
-            }else{   
-            res.status(200).json({mensage:'Has iniciado sesión'})
-            }
-        }
-    }catch(error){
-        console.log(error)
-        res.status(500).json({msg:'Ha ocurrido un error'})
-    }
-}
 
-module.exports = { addUser, updateUser, deleteUser, login}
+
+module.exports = { addUser, updateUser, deleteUser}

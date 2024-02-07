@@ -17,7 +17,7 @@ const login = async(req, res = response) => {
         }
 
         // Si el usuario está activo
-        if (!user.state) {
+        if (!user.active) {
             return res.status(400).json({
                 msg: 'Usuario / Password no son correctos - estado: false'
             })
@@ -43,7 +43,7 @@ const login = async(req, res = response) => {
     } catch (error) {
         console.log(error)
         res.status(500).json({
-            msg: 'Hable con el administtrador'
+            msg: 'Hable con el administrador'
         })
     }
 }

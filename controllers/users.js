@@ -4,14 +4,14 @@ const bcryptjs = require('bcryptjs');
 const salt = bcryptjs.genSaltSync();
 const jwt = require('jsonwebtoken');
 
-// const getUsers = async (req, res) => {
-//     try {
-//         const users = await User.find();
-//         res.status(200).json(users);
-//     } catch (error) {
-//         res.status(500).json({message: error});
-//     }
-// }
+const getUsers = async (req, res) => {
+    try {
+        const users = await User.find();
+        res.status(200).json(users);
+    } catch (error) {
+        res.status(500).json({message: error});
+    }
+}
 
 // const getUser = async (req, res) => {
 //     const idUser = req.params.id
@@ -23,22 +23,27 @@ const jwt = require('jsonwebtoken');
 // }
 
 const addUser = async(req, res = response) => {
-    const errors = validationResult(req);
-    if ( !errors.isEmpty() ) {
-        return res.status(400).json(errors);
-    }
-    const {nombre,login,email,password,rol,active} = req.body;
-    if (active == null) {
-        active = true
-    }
-    encryptedPassword = bcryptjs.hashSync( password, salt);
-    const user = new User({nombre,login,email,encryptedPassword,rol,active})
-    const newUser = await User.findOne({nick})
-    if(newUser){
-        return res.status(400).json({msg:"Ya existe un usuario con ese nick"})
-    }
+    // const errors = validationResult(req);
+    // if ( !errors.isEmpty() ) {
+    //     return res.status(400).json(errors);
+    // }
+    const {nombre,login,email,password} = req.body;
+    const rol = 'USER';
+    const active = true;
+    const user = new User({nombre,login,email,password,rol,active})
+   
+   try {
+    const salt = bcryptjs.genSaltSync();
+    user.password = bcryptjs.hashSync(password,salt);
     await user.save();
     res.json({user})
+   } catch (error) {
+    if (error.keyValue.email){
+        res.status(500).json({msg:'El email ya está registrado'})
+   } else if (error.keyValue.login){
+        res.status(500).json({msg:"El login ya se encuentra en uso"})
+   }
+}
 }
 
 const updateUser = async(req, res = response) => {
@@ -69,4 +74,4 @@ const deleteUser = async(req, res = response) => {
 
 
 
-module.exports = { addUser, updateUser, deleteUser}
+module.exports = { getUsers, addUser, updateUser, deleteUser}

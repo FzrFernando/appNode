@@ -2,12 +2,12 @@ const express = require("express");
 const router = express.Router();
 const { validateFields } = require("../middlewares/validate-fields");
 const { check } = require('express-validator');
-const { addUser, updateUser, deleteUser } = require ('../controllers/users');
+const { getUsers, addUser, updateUser, deleteUser } = require ('../controllers/users');
 const { existsEmail, existsNick } = require("../helpers/db-validators");
 
 const regexp_password = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}/;
 
-// router.get('/',getUsers)
+router.get('/',getUsers)
 
 // router.get('/:id',[
 //     check('id','No es un id correcto').isMongoId(),

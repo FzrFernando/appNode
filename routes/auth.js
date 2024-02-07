@@ -3,12 +3,12 @@ const router = express.Router()
 const { check } = require('express-validator')
 const { validateFields } = require('../middlewares/validate-fields');
 
-const {login} = require('../controllers/users')
+const {login} = require('../controllers/auth')
 
-router.get('/login',[
-    check('email','El email es requerido').not().isEmpty(),
-    check('password','El password es requerido').not().isEmpty(),
+router.post('/login',[
+    check('email','Email is invalid').isEmail(),
+    check('password','Password is mandatory').not().isEmpty(),
     validateFields
-],login)
+] ,login)
 
 module.exports = router

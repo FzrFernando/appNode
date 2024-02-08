@@ -48,4 +48,18 @@ const login = async(req, res = response) => {
     }
 }
 
-module.exports = { login }
+const renew = async(req, res = response) => {
+
+    const user = req.user;
+
+    //Generar el JWT
+    const payload = { uid: req.user.id};
+    const token = jwt.sign( payload, process.env.SECRET, {expiresIn:'4h'})
+
+    res.json ({
+        user,
+        token
+    })
+}
+
+module.exports = { login, renew}
